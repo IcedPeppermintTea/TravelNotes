@@ -1,33 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:background="@color/soft_blue">
+    android:background="@color/soft_blue"
+    tools:context=".UnvisitedPlacesActivity">
 
+    <!-- Back Button at the bottom left -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/darker_blue"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_back"
+        app:iconTint="@color/white"
+        android:padding="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Centered Add a Future Adventure Button -->
     <Button
         android:id="@+id/buttonAddAdventure"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Add a Future Adventure"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="20dp"
         android:background="@drawable/button_background"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/buttonViewAdventures"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
 
+    <!-- Centered See All Future Adventures Button -->
     <Button
         android:id="@+id/buttonViewAdventures"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="See All Future Adventures"
-        android:layout_below="@id/buttonAddAdventure"
-        android:layout_marginTop="20dp"
         android:background="@drawable/button_background"
-        android:textColor="@color/white" />
-</LinearLayout>
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

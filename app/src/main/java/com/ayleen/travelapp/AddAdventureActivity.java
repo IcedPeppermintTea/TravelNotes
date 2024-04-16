@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.gson.Gson;
 
@@ -21,10 +23,22 @@ import java.util.List;
 
 public class AddAdventureActivity extends AppCompatActivity {
 
+    Button btnBack;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_adventure);
+
+        // Setting up the Back Button
+        btnBack = findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         EditText editTextPlaceName = findViewById(R.id.editTextPlaceName);
         EditText editTextAddress = findViewById(R.id.editTextAddress);
@@ -48,6 +62,7 @@ public class AddAdventureActivity extends AppCompatActivity {
             Toast.makeText(this, "Site saved!", Toast.LENGTH_SHORT).show();
             finish(); // Closes the activity, returning to the previous one
         });
+
     }
 
     private void savePlace(Place place) {

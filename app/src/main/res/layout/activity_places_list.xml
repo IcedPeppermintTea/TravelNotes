@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- ListView for displaying places -->
     <ListView
         android:id="@+id/listViewPlaces"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnBack" />  <!-- Ensures the ListView does not overlap the Back button -->
+
+    <!-- Back Button at the bottom left -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/darker_blue"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_back"
+        app:iconTint="@color/white"
+        android:padding="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp" />
+
+</RelativeLayout>

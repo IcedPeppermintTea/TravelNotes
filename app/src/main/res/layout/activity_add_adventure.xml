@@ -3,57 +3,84 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:fillViewport="true">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:padding="16dp">
 
-        <EditText
-            android:id="@+id/editTextPlaceName"
+        <!-- Form Content in a LinearLayout starting from the top -->
+        <LinearLayout
+            android:id="@+id/linearLayoutForm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name of Place" />
+            android:orientation="vertical"
+            android:layout_alignParentTop="true">
 
-        <EditText
-            android:id="@+id/editTextAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Address" />
+            <EditText
+                android:id="@+id/editTextPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of Place" />
 
-        <EditText
-            android:id="@+id/editTextCity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="City" />
+            <EditText
+                android:id="@+id/editTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address" />
 
-        <EditText
-            android:id="@+id/editTextState"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="State" />
+            <EditText
+                android:id="@+id/editTextCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City" />
 
-        <EditText
-            android:id="@+id/editTextZip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Zip" />
+            <EditText
+                android:id="@+id/editTextState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="State" />
 
-        <EditText
-            android:id="@+id/editTextDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Description" />
+            <EditText
+                android:id="@+id/editTextZip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Zip" />
 
-        <Button
-            android:id="@+id/buttonSave"
-            android:layout_width="200dp"
+            <EditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description" />
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/button_background"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <!-- Back Button at the bottom left -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:background="@drawable/button_background"
-            android:textColor="@color/white" />
-    </LinearLayout>
+            android:text="Back"
+            android:backgroundTint="@color/darker_blue"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/ic_back"
+            app:iconTint="@color/white"
+            android:padding="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="24dp" />
+
+    </RelativeLayout>
 </ScrollView>

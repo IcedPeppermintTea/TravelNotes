@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -13,7 +14,6 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
     public PlaceAdapter(Context context, List<Place> places) {
         super(context, 0, places);
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Place place = getItem(position);
